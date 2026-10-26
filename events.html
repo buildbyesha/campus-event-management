@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Events | Campus Event Portal - LPU</title>
+<meta name="description" content="Browse upcoming fests, workshops, seminars and competitions with live seat counts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site"><div class="wrap">
+<a class="brand" href="index.html"><svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="10" fill="#EC7E23"/><path d="M9 12h18v4a2 2 0 0 0 0 4v4H9v-4a2 2 0 0 0 0-4z" fill="#1D1D1B"/></svg>Campus Event Portal</a>
+<nav aria-label="Main navigation"><ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="events.html" aria-current="page">Events</a></li>
+<li><a href="register.html">Register</a></li>
+<li><a href="organizer-dashboard.html">Organizer</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul></nav></div></header>
+<main id="main">
+<div class="page-title"><div class="wrap"><h1>Upcoming events</h1></div></div>
+<section><div class="wrap">
+<form action="events.html" method="get" role="search" aria-label="Search events"><div class="row">
+<div><label for="q">Event name</label><input id="q" name="q" type="search" placeholder="e.g. Hackathon"></div>
+<div><label for="d">Date from</label><input id="d" name="d" type="date"></div></div>
+<p><button class="btn" type="submit">Search events</button></p></form>
+<h2>Filter by category</h2>
+<div class="filters">
+<input type="radio" name="f" id="f-all" checked><label for="f-all">All</label>
+<input type="radio" name="f" id="f-fest"><label for="f-fest">Fests</label>
+<input type="radio" name="f" id="f-workshop"><label for="f-workshop">Workshops</label>
+<input type="radio" name="f" id="f-seminar"><label for="f-seminar">Seminars</label>
+<input type="radio" name="f" id="f-competition"><label for="f-competition">Competitions</label>
+<div class="grid">
+<article class="card fest"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#FFE0C2"/><path d="M24 8l4.5 9.5L39 19l-7.5 7.3L33 37l-9-5-9 5 1.5-10.7L9 19l10.5-1.5z" fill="none" stroke="#1D1D1B" stroke-width="2.5" stroke-linejoin="round"/></svg><p class="tag">Fest</p><h3>LPU TechFest 2026</h3>
+<p><strong>Date:</strong> 14 Nov 2026, 9:00 AM<br><strong>Venue:</strong> Block 32 Auditorium<br><strong>Organizer:</strong> School of CSE</p>
+<p>450 / 500 seats filled</p><div class="bar " role="progressbar" aria-label="Seats filled for LPU TechFest 2026" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><span style="width:90%"></span></div>
+<p><span class="badge almost">Almost Full</span></p><a class="btn" href="event-details.html">View Details<span class="sr"> of LPU TechFest 2026</span></a></article>
+<article class="card fest"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#FFE0C2"/><path d="M24 8l4.5 9.5L39 19l-7.5 7.3L33 37l-9-5-9 5 1.5-10.7L9 19l10.5-1.5z" fill="none" stroke="#1D1D1B" stroke-width="2.5" stroke-linejoin="round"/></svg><p class="tag">Fest</p><h3>Rangmanch Cultural Night</h3>
+<p><strong>Date:</strong> 19 Nov 2026, 6:00 PM<br><strong>Venue:</strong> Open Air Theatre<br><strong>Organizer:</strong> Cultural Council</p>
+<p>300 / 600 seats filled</p><div class="bar " role="progressbar" aria-label="Seats filled for Rangmanch Cultural Night" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span style="width:50%"></span></div>
+<p><span class="badge open">Open</span></p><a class="btn" href="event-details.html">View Details<span class="sr"> of Rangmanch Cultural Night</span></a></article>
+<article class="card workshop"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#FFE0C2"/><path d="M10 14h28v18H10zM6 36h36" fill="none" stroke="#1D1D1B" stroke-width="2.5" stroke-linejoin="round"/></svg><p class="tag">Workshop</p><h3>Full Stack Web Workshop</h3>
+<p><strong>Date:</strong> 21 Nov 2026, 10:00 AM<br><strong>Venue:</strong> Uni Mall Seminar Hall<br><strong>Organizer:</strong> Dept. of IT</p>
+<p>62 / 80 seats filled</p><div class="bar " role="progressbar" aria-label="Seats filled for Full Stack Web Workshop" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"><span style="width:77%"></span></div>
+<p><span class="badge open">Open</span></p><a class="btn" href="event-details.html">View Details<span class="sr"> of Full Stack Web Workshop</span></a></article>
+<article class="card seminar"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#FFE0C2"/><path d="M12 12h24v16H12zM24 28v8M18 38h12" fill="none" stroke="#1D1D1B" stroke-width="2.5" stroke-linejoin="round"/></svg><p class="tag">Seminar</p><h3>AI in Healthcare Seminar</h3>
+<p><strong>Date:</strong> 24 Nov 2026, 11:00 AM<br><strong>Venue:</strong> Block 38 Hall<br><strong>Organizer:</strong> School of Bioengineering</p>
+<p>120 / 120 seats filled</p><div class="bar full" role="progressbar" aria-label="Seats filled for AI in Healthcare Seminar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span style="width:100%"></span></div>
+<p><span class="badge closed">Closed - Seats Full</span></p><a class="btn" href="event-details.html">View Details<span class="sr"> of AI in Healthcare Seminar</span></a></article>
+<article class="card competition"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#FFE0C2"/><path d="M16 10h16v10a8 8 0 0 1-16 0zM24 28v8M17 38h14" fill="none" stroke="#1D1D1B" stroke-width="2.5" stroke-linejoin="round"/></svg><p class="tag">Competition</p><h3>CodeSprint Hackathon</h3>
+<p><strong>Date:</strong> 28 Nov 2026, 8:30 AM<br><strong>Venue:</strong> Block 34 Labs<br><strong>Organizer:</strong> Coding Club</p>
+<p>45 / 100 seats filled</p><div class="bar " role="progressbar" aria-label="Seats filled for CodeSprint Hackathon" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"><span style="width:45%"></span></div>
+<p><span class="badge open">Open</span></p><a class="btn" href="event-details.html">View Details<span class="sr"> of CodeSprint Hackathon</span></a></article>
+<article class="card competition"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#FFE0C2"/><path d="M16 10h16v10a8 8 0 0 1-16 0zM24 28v8M17 38h14" fill="none" stroke="#1D1D1B" stroke-width="2.5" stroke-linejoin="round"/></svg><p class="tag">Competition</p><h3>Robotics Challenge</h3>
+<p><strong>Date:</strong> 2 Dec 2026, 10:00 AM<br><strong>Venue:</strong> Block 29 Arena<br><strong>Organizer:</strong> School of Mechanical Engg.</p>
+<p>38 / 60 seats filled</p><div class="bar " role="progressbar" aria-label="Seats filled for Robotics Challenge" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100"><span style="width:63%"></span></div>
+<p><span class="badge open">Open</span></p><a class="btn" href="event-details.html">View Details<span class="sr"> of Robotics Challenge</span></a></article>
+</div></div></div></section>
+</main>
+<footer class="site"><div class="wrap">
+<div class="grid">
+<div><h2>Campus Event Management &amp; Registration Portal</h2><p>Student project for Lovely Professional University, Phagwara. This is not an official LPU website and uses sample data only.</p></div>
+<div><h3>Quick links</h3><ul><li><a href="events.html">Browse events</a></li><li><a href="register.html">Register</a></li><li><a href="organizer-dashboard.html">Organizer dashboard</a></li><li><a href="about.html">About the project</a></li></ul></div>
+<div><h3>Contact</h3><address>Events Cell (sample)<br>Phagwara, Punjab 144411<br><a href="mailto:events@example.edu">events@example.edu</a><br>+91 98765 43210</address>
+<p class="social">
+<a href="https://www.instagram.com/" aria-label="Instagram"><svg width="28" height="28" viewBox="0 0 28 28"><rect x="3" y="3" width="22" height="22" rx="7" fill="none" stroke="#EC7E23" stroke-width="2.5"/><circle cx="14" cy="14" r="5" fill="none" stroke="#EC7E23" stroke-width="2.5"/></svg></a>
+<a href="https://www.youtube.com/" aria-label="YouTube"><svg width="28" height="28" viewBox="0 0 28 28"><rect x="2" y="6" width="24" height="16" rx="5" fill="#EC7E23"/><path d="M11 10l7 4-7 4z" fill="#1D1D1B"/></svg></a>
+<a href="https://www.linkedin.com/" aria-label="LinkedIn"><svg width="28" height="28" viewBox="0 0 28 28"><rect x="2" y="2" width="24" height="24" rx="5" fill="#EC7E23"/><path d="M8 12v8M8 8v1M12 20v-8M12 15c0-4 7-4 7 0v5" stroke="#1D1D1B" stroke-width="2.5" fill="none"/></svg></a></p></div>
+</div>
+<p><small>&copy; 2026 Student project. All sample names and numbers are fictional.</small></p>
+</div></footer>
+</body>
+</html>

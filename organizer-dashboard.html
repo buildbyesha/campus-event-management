@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Organizer Dashboard | Campus Event Portal - LPU</title>
+<meta name="description" content="Organizer dashboard to create events, track registrations and manage seat capacity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site"><div class="wrap">
+<a class="brand" href="index.html"><svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="10" fill="#EC7E23"/><path d="M9 12h18v4a2 2 0 0 0 0 4v4H9v-4a2 2 0 0 0 0-4z" fill="#1D1D1B"/></svg>Campus Event Portal</a>
+<nav aria-label="Main navigation"><ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="register.html">Register</a></li>
+<li><a href="organizer-dashboard.html" aria-current="page">Organizer</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul></nav></div></header>
+<main id="main">
+<div class="dash"><nav class="side" aria-label="Dashboard navigation"><ul>
+<li><a href="#summary">Dashboard</a></li><li><a href="#create">Create Event</a></li><li><a href="#events">Manage Events</a></li><li><a href="#events">Registrations</a></li><li><a href="#events">Seat Management</a></li><li><a href="#notifications">Notifications</a></li><li><a href="#summary">Reports</a></li><li><a href="index.html">Logout</a></li></ul></nav>
+<div class="dash-main"><h1 id="summary">Organizer dashboard</h1>
+<div class="mini"><div><strong>48</strong>Total Events</div><div><strong>6,200</strong>Total Registrations</div><div><strong>4,850</strong>Seats Filled</div><div><strong>5</strong>Events Closing Soon</div></div>
+<h2 id="events">Manage events</h2><div class="scroll"><table><thead><tr><th>Event</th><th>Date and venue</th><th>Total seats</th><th>Registered</th><th>Available</th><th>Status</th><th>Capacity</th></tr></thead><tbody>
+<tr><td>LPU TechFest 2026</td><td>14 Nov, Block 32</td><td>500</td><td>450</td><td>50</td><td><span class="badge almost">Closing soon</span></td><td><div class="bar " role="progressbar" aria-label="LPU TechFest 2026 capacity" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><span style="width:90%"></span></div></td></tr>
+<tr><td>Full Stack Workshop</td><td>21 Nov, Uni Mall</td><td>80</td><td>62</td><td>18</td><td><span class="badge open">Open</span></td><td><div class="bar " role="progressbar" aria-label="Full Stack Workshop capacity" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"><span style="width:77%"></span></div></td></tr>
+<tr><td>AI in Healthcare Seminar</td><td>24 Nov, Block 38</td><td>120</td><td>120</td><td>0</td><td><span class="badge closed">Full</span></td><td><div class="bar full" role="progressbar" aria-label="AI in Healthcare Seminar capacity" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span style="width:100%"></span></div></td></tr>
+<tr><td>CodeSprint Hackathon</td><td>28 Nov, Block 34</td><td>100</td><td>45</td><td>55</td><td><span class="badge open">Open</span></td><td><div class="bar " role="progressbar" aria-label="CodeSprint Hackathon capacity" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"><span style="width:45%"></span></div></td></tr></tbody></table></div>
+<div class="two" style="margin-top:1.5rem"><form id="create" action="organizer-dashboard.html" method="get"><h2>Create new event</h2>
+<label for="t">Event title</label><input id="t" name="t" type="text" required placeholder="Event title">
+<div class="row"><div><label for="c">Category</label><select id="c" name="c"><option>Fest</option><option>Workshop</option><option>Seminar</option><option>Competition</option></select></div><div><label for="lim">Registration limit</label><input id="lim" name="lim" type="number" min="1" max="2000" placeholder="100"></div></div>
+<label for="ds">Description</label><textarea id="ds" name="ds" rows="3" placeholder="What is this event about?"></textarea>
+<div class="row"><div><label for="dt">Date</label><input id="dt" name="dt" type="date"></div><div><label for="tm">Time</label><input id="tm" name="tm" type="time"></div></div>
+<label for="v">Venue</label><input id="v" name="v" type="text" placeholder="Block and hall">
+<label for="el">Eligibility</label><input id="el" name="el" type="text" placeholder="e.g. All LPU students">
+<label for="o">Organizer name</label><input id="o" name="o" type="text" placeholder="Your name">
+<p><button class="btn" type="submit">Create event</button></p></form>
+<aside id="notifications" class="card"><h2>Notifications</h2><ul><li>LPU TechFest is almost full (450 / 500).</li><li>New registration received for CodeSprint.</li><li>AI in Healthcare Seminar is now closed.</li></ul></aside></div>
+</div></div>
+</main>
+<footer class="site"><div class="wrap">
+<div class="grid">
+<div><h2>Campus Event Management &amp; Registration Portal</h2><p>Student project for Lovely Professional University, Phagwara. This is not an official LPU website and uses sample data only.</p></div>
+<div><h3>Quick links</h3><ul><li><a href="events.html">Browse events</a></li><li><a href="register.html">Register</a></li><li><a href="organizer-dashboard.html">Organizer dashboard</a></li><li><a href="about.html">About the project</a></li></ul></div>
+<div><h3>Contact</h3><address>Events Cell (sample)<br>Phagwara, Punjab 144411<br><a href="mailto:events@example.edu">events@example.edu</a><br>+91 98765 43210</address>
+<p class="social">
+<a href="https://www.instagram.com/" aria-label="Instagram"><svg width="28" height="28" viewBox="0 0 28 28"><rect x="3" y="3" width="22" height="22" rx="7" fill="none" stroke="#EC7E23" stroke-width="2.5"/><circle cx="14" cy="14" r="5" fill="none" stroke="#EC7E23" stroke-width="2.5"/></svg></a>
+<a href="https://www.youtube.com/" aria-label="YouTube"><svg width="28" height="28" viewBox="0 0 28 28"><rect x="2" y="6" width="24" height="16" rx="5" fill="#EC7E23"/><path d="M11 10l7 4-7 4z" fill="#1D1D1B"/></svg></a>
+<a href="https://www.linkedin.com/" aria-label="LinkedIn"><svg width="28" height="28" viewBox="0 0 28 28"><rect x="2" y="2" width="24" height="24" rx="5" fill="#EC7E23"/><path d="M8 12v8M8 8v1M12 20v-8M12 15c0-4 7-4 7 0v5" stroke="#1D1D1B" stroke-width="2.5" fill="none"/></svg></a></p></div>
+</div>
+<p><small>&copy; 2026 Student project. All sample names and numbers are fictional.</small></p>
+</div></footer>
+</body>
+</html>
