@@ -1,0 +1,118 @@
+/* Campus Event Management & Registration Portal - student project (not an official LPU site) */
+/* 1. Design tokens */
+:root{--primary-color:#EC7E23;--primary-dark:#B45309;--dark-color:#1D1D1B;--light-color:#FFFFFF;--gray-color:#D0D2D3;--bg-color:#FFF8F2;
+--font-head:'Bricolage Grotesque',system-ui,sans-serif;--font-body:'Nunito Sans',system-ui,sans-serif;
+--space:1rem;--radius:14px;--shadow:0 6px 18px rgba(29,29,27,.1)}
+/* 2. Base */
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font-body);background:var(--bg-color);color:var(--dark-color);line-height:1.6}
+h1,h2,h3{font-family:var(--font-head);line-height:1.2}
+a{color:var(--primary-dark)}
+:focus-visible{outline:3px solid var(--dark-color);outline-offset:2px}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;padding:8px;z-index:9}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 var(--space)}
+section{padding:2.5rem 0}
+.alt-bg{background:#fff}
+/* 3. Navbar (Flexbox) */
+header.site{background:var(--dark-color);position:sticky;top:0;z-index:5}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;padding-block:.7rem}
+.brand{display:flex;align-items:center;gap:.6rem;color:#fff;text-decoration:none;font-family:var(--font-head);font-weight:700}
+nav ul{display:flex;flex-wrap:wrap;gap:.25rem;list-style:none;margin:0;padding:0}
+nav a{color:#fff;text-decoration:none;padding:.4rem .8rem;border-radius:99px;transition:background .25s,color .25s;display:inline-block}
+nav a:hover,nav a[aria-current]{background:var(--primary-color);color:var(--dark-color)}
+/* 4. Buttons, badges */
+.btn{display:inline-block;background:var(--primary-color);color:var(--dark-color);font:700 1rem var(--font-body);padding:.65rem 1.3rem;border-radius:99px;text-decoration:none;border:2px solid var(--primary-color);cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.badge{display:inline-block;padding:.15rem .7rem;border-radius:99px;font-size:.85rem;font-weight:700}
+.open{background:#DCFCE7;color:#14532D}.almost{background:#FFEDD5;color:#7C2D12}.closed{background:#FEE2E2;color:#7F1D1D}
+.tag{font-size:.85rem;font-weight:700;color:var(--primary-dark)}
+/* 5. Hero with subtle animation */
+.hero{background:radial-gradient(circle at 85% 20%,rgba(236,126,35,.55),transparent 45%),var(--dark-color);color:#fff;padding:4rem 0}
+.hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:2rem;align-items:center}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);margin:.2em 0}
+.float{animation:float 4s ease-in-out infinite;max-width:100%}
+@keyframes float{50%{transform:translateY(-12px) rotate(-2deg)}}
+.page-title{background:var(--dark-color);color:#fff;padding:2rem 0}.page-title h1{margin:0}
+/* 6. Grids and cards */
+.grid{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.2rem;border-top:4px solid var(--primary-color);transition:transform .25s,box-shadow .25s;animation:rise .6s both}
+.card:hover{transform:translateY(-4px)}
+.card h3{margin:.3rem 0}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+.ico{width:48px;height:48px}
+.steps{counter-reset:s;list-style:none;padding:0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.steps li{counter-increment:s;background:#fff;border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
+.steps li::before{content:counter(s);display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--primary-color);font-weight:800;margin-right:.5rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center}
+.stats div{background:var(--dark-color);color:#fff;border-radius:var(--radius);padding:1.2rem}
+.stats strong{display:block;font:800 2rem var(--font-head);color:var(--primary-color)}
+blockquote{margin:0}
+.cta{background:var(--primary-color);color:var(--dark-color);text-align:center;border-radius:var(--radius);padding:2rem}
+.cta .btn{background:var(--dark-color);color:#fff;border-color:var(--dark-color)}
+.cta .btn.ghost{background:transparent;color:var(--dark-color)}
+/* 7. Progress bar */
+.bar{background:var(--gray-color);border-radius:99px;height:10px;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--primary-color);border-radius:99px}
+.bar.full span{background:#B91C1C}
+/* 8. CSS-only filters (radio buttons + sibling selectors) */
+.filters>input{position:absolute;opacity:0}
+.filters>label{display:inline-block;padding:.35rem 1rem;border:2px solid var(--primary-color);border-radius:99px;cursor:pointer;margin:0 .3rem .8rem 0;font-weight:700}
+.filters>input:checked+label{background:var(--primary-color)}
+.filters>input:focus-visible+label{outline:3px solid var(--dark-color)}
+#f-fest:checked~.grid .card:not(.fest),#f-workshop:checked~.grid .card:not(.workshop),#f-seminar:checked~.grid .card:not(.seminar),#f-competition:checked~.grid .card:not(.competition){display:none}
+/* 9. Tables */
+.scroll{overflow-x:auto;border-radius:var(--radius);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;background:#fff;min-width:560px}
+th{background:var(--dark-color);color:#fff;text-align:left}
+th,td{padding:.7rem;border-bottom:1px solid var(--gray-color)}
+tbody tr:nth-child(even){background:#FFF1E4}
+tbody tr{transition:background .2s}tbody tr:hover{background:#FFE0C2}
+/* 10. Forms */
+form{background:#fff;border-radius:var(--radius);padding:1.2rem;box-shadow:var(--shadow)}
+label{display:block;font-weight:700;margin-top:.9rem}
+input,select,textarea{width:100%;padding:.6rem;border:2px solid var(--gray-color);border-radius:8px;font:inherit;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--primary-color)}
+input[type=checkbox]{width:auto;margin-right:.4rem}
+.row{display:flex;gap:1rem;flex-wrap:wrap}.row>div{flex:1 1 220px}
+.err{display:none;color:#B91C1C;font-size:.85rem}
+input:invalid:not(:placeholder-shown){border-color:#B91C1C}
+input:invalid:not(:placeholder-shown)+.err{display:block}
+.note{background:#FFEDD5;border-left:5px solid var(--primary-color);padding:.8rem 1rem;border-radius:8px}
+.two{display:grid;grid-template-columns:2fr 1fr;gap:1.5rem}
+details{background:#fff;border-radius:8px;padding:.7rem 1rem;margin-bottom:.6rem;box-shadow:var(--shadow)}
+summary{cursor:pointer;font-weight:700}
+iframe{width:100%;height:280px;border:0;border-radius:var(--radius)}
+/* 11. Dashboard (CSS Grid) */
+.dash{display:grid;grid-template-columns:230px 1fr;min-height:80vh}
+.side{background:var(--dark-color);padding:1rem}
+.side ul{list-style:none;margin:0;padding:0}
+.side a{display:block;color:#fff;text-decoration:none;padding:.55rem .8rem;border-radius:8px;transition:background .2s}
+.side a:hover{background:var(--primary-color);color:var(--dark-color)}
+.dash-main{padding:1.2rem}
+.mini{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.5rem}
+.mini div{background:#fff;border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
+.mini strong{display:block;font:800 1.8rem var(--font-head)}
+/* 12. Confirmation slip */
+.slip{background:#fff;border:2px dashed var(--primary-color);border-radius:var(--radius);padding:1.5rem;max-width:720px;margin:1rem auto;display:grid;grid-template-columns:1fr auto;gap:1rem}
+.success{text-align:center;animation:pop .7s both}
+.tick{stroke-dasharray:40;stroke-dashoffset:40;animation:draw .8s .4s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{from{transform:scale(.7);opacity:0}}
+/* 13. Footer */
+footer.site{background:var(--dark-color);color:#fff;padding:2.5rem 0 1rem}
+footer.site a{color:#FFD2A8}
+footer .grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+footer ul{list-style:none;padding:0}
+.social{display:flex;gap:.6rem}.social a{display:inline-flex;transition:transform .2s}.social a:hover{transform:scale(1.15)}
+/* 14. Responsive */
+@media (max-width:800px){
+.hero .wrap,.two,.slip{grid-template-columns:1fr}
+.stats,.mini{grid-template-columns:repeat(2,1fr)}
+.dash{grid-template-columns:1fr}
+.side ul{display:flex;flex-wrap:wrap;gap:.3rem}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* 15. Print: only the confirmation slip */
+@media print{header.site,footer.site,.noprint,.skip{display:none!important}
+body{background:#fff}.slip{border:2px solid #000;max-width:none}.success{animation:none}}
